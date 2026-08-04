@@ -1,0 +1,20 @@
+int *revarr;
+revarr = (int*) malloc(num * sizeof(int));
+if (revarr == NULL) {
+    return 1;   // Sanity check: Exit if allocation failed
+}
+for(int i = num-1, j = 0; i >= 0; i--, j++)
+{
+    revarr[j] = arr[i];
+}
+
+for(i = 0; i < num; i++)
+{
+    printf("%d ", *(revarr + i));
+}
+
+free(arr);      // free malloc before program ends
+free(revarr);   // free malloc before program ends
+
+return 0;
+}
