@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(){
+    int n, k;
+    scanf("%d %d", &n, &k);
+    
+    int en = 0;
+    int oer = 0;
+    int eksoer = 0;
+    int temp;
+    
+    for(int i = 1; i < n; i++){
+        for(int j = i + 1; j <= n; j++){
+            temp = i & j;
+            if(temp > en && temp < k) en = temp;
+            
+            temp = i | j;
+            if(temp > oer && temp < k) oer = temp;
+            
+            temp = i ^ j;
+            if(temp > eksoer && temp < k) eksoer = temp;
+        }
+    }
+    printf("%d\n%d\n%d", en, oer, eksoer);
+    return 0;
+}
