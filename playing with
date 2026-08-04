@@ -1,0 +1,29 @@
+int main() 
+{
+        //we use ch without specifing the size becuase we are taking only an alphabet
+    char ch;
+        // for s and sen we are using array declartion whiel mentioning its size
+    char s[100];
+    char sen[100];
+    
+        //reads the input and stores it as a char in the variable defined early - ch
+    scanf("%c",&ch);
+        
+                        /* reads the input and stores it as a string in the variable- s, note that there is an extra scanf("\n")---> This is important because this clears the leftover newline charecters from the previous lines(\n) from the input buffer,without this the subsequent string reading function will instantly fail and skip the part where the user input is taken.
+        */
+scanf("\n");
+    scanf("%[^\n]%*c",&s);
+        
+        // refer to the comment before scanf("%[^\n]%*c",&s);
+        
+    scanf("\n");
+    scanf("%[^\n]%*c",&sen);
+        
+        //prints the respective values of the ch,s and sen variables
+    
+    printf("%c\n",ch);
+    printf("%s\n",s);
+    printf("%s",sen);
+    
+    return 0;
+}
